@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Головна - Піцерія Oderman{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Ласкаво просимо до нашої піцерії!</h2>
+
+    <div class="weather-container" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+        <h3>Прогноз погоди</h3>
+        {% if weather %}
+            <p><strong>Місто:</strong> {{ weather.city }}</p>
+            <p><strong>Дата:</strong> {{ weather.date }}</p>
+            <p><strong>Температура:</strong> {{ weather.temp }}°C</p>
+            <p><strong>Опис:</strong> {{ weather.description }}</p>
+
+            <div class="pizza-recommendation" style="margin-top: 20px; font-weight: bold;">
+                <h4>Рекомендація до піци:</h4>
+                <p>{{ weather.pizza_recommendation }}</p>
+            </div>
+        {% else %}
+            <p>Не вдалося отримати дані про погоду. Спробуйте ще раз пізніше.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

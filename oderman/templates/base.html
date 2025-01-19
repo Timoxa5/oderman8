@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pizzeria Oderman{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>Піцерія Oderman</h1>
+</header>
+
+<!-- Навігаційна панель -->
+<nav>
+    <a href="/">Головна</a>
+    <a href="/menu">Меню</a>
+    <a href="/add">Додати піцу</a>
+    <a href="/edit/1">Редагувати</a>
+</nav>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
